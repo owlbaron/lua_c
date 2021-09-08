@@ -98,8 +98,7 @@ lua_State* openLuaFile(char* file) {
 lua_State* executeLuaFunction(lua_State* L, function func) {
     lua_getglobal(L, func.name);
 
-    int i;
-    for (i = 0; i < func.argsSize; i++) {
+    for (int i = 0; i < func.argsSize; i++) {
         lua_pushnumber(L, func.args[i]);
     }
 
